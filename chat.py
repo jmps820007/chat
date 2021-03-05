@@ -1,8 +1,8 @@
 def read_file(filename):
     lines = []
-    with open(filename, 'r', encoding='utf-8-sig') as f:
+    with open(filename, 'r', encoding='utf-8-sig') as f: # sig功能: '\ufeffAllen\n' ---> '\Allen\n'
         for line in f:
-            lines.append(line.strip())
+            lines.append(line.strip()) # strip()功能: 去掉空格 'Allen\n' ---> 'Allen'
     return lines
 
 def convert(lines):
@@ -29,4 +29,5 @@ def main():
     lines = read_file('input.txt')
     lines = convert(lines)
     write_file('output.txt', lines)
+
 main()
